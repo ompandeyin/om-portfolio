@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { NAV_LINKS, PERSONAL } from '../data/constants';
+import { motion } from 'framer-motion';
+import { FiGithub, FiLinkedin, FiInstagram, FiYoutube, FiTwitter } from 'react-icons/fi';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -46,6 +48,13 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
+            <li style={{ display: "flex", gap: "16px", alignItems: "center", marginLeft: "16px", paddingTop: menuOpen ? "20px" : "0" }}>
+              <motion.a whileHover={{ scale: 1.2, color: "var(--accent-blue)" }} transition={{ duration: 0.2 }} href={PERSONAL.socials.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-secondary)" }}><FiLinkedin size={20} /></motion.a>
+              <motion.a whileHover={{ scale: 1.2, color: "var(--accent-blue)" }} transition={{ duration: 0.2 }} href={PERSONAL.socials.instagram} target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-secondary)" }}><FiInstagram size={20} /></motion.a>
+              <motion.a whileHover={{ scale: 1.2, color: "var(--accent-blue)" }} transition={{ duration: 0.2 }} href={PERSONAL.socials.youtube} target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-secondary)" }}><FiYoutube size={20} /></motion.a>
+              <motion.a whileHover={{ scale: 1.2, color: "var(--accent-blue)" }} transition={{ duration: 0.2 }} href={PERSONAL.socials.twitter} target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-secondary)" }}><FiTwitter size={20} /></motion.a>
+              <motion.a whileHover={{ scale: 1.2, color: "var(--accent-blue)" }} transition={{ duration: 0.2 }} href={PERSONAL.socials.github} target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-secondary)" }}><FiGithub size={20} /></motion.a>
+            </li>
           </ul>
         </div>
       </nav>

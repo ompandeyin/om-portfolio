@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FiMail, FiGithub, FiLinkedin, FiSend } from 'react-icons/fi';
+import { FiMail, FiGithub, FiLinkedin, FiSend, FiInstagram, FiYoutube, FiTwitter } from 'react-icons/fi';
 import { PERSONAL } from '../data/constants';
 
 const containerVariant = {
@@ -102,13 +102,25 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="social-links">
-              <a href={PERSONAL.github} target="_blank" rel="noopener noreferrer" className="social-link glass" aria-label="GitHub">
-                <FiGithub />
-              </a>
-              <a href={`mailto:${PERSONAL.email}`} className="social-link glass" aria-label="Email">
-                <FiMail />
-              </a>
+            <div style={{ marginTop: "24px" }}>
+              <div style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: 16 }}>Connect with me</div>
+              <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+                <motion.a whileHover={{ scale: 1.15, boxShadow: "0 0 20px rgba(99,102,241,0.5)" }} transition={{ duration: 0.2 }} href={PERSONAL.socials.linkedin} target="_blank" rel="noopener noreferrer" className="social-link glass" aria-label="LinkedIn" style={{ padding: "12px", borderRadius: "50%", display: "flex", color: "var(--accent-blue)" }}>
+                  <FiLinkedin size={22} />
+                </motion.a>
+                <motion.a whileHover={{ scale: 1.15, boxShadow: "0 0 20px rgba(99,102,241,0.5)" }} transition={{ duration: 0.2 }} href={PERSONAL.socials.instagram} target="_blank" rel="noopener noreferrer" className="social-link glass" aria-label="Instagram" style={{ padding: "12px", borderRadius: "50%", display: "flex", color: "var(--accent-blue)" }}>
+                  <FiInstagram size={22} />
+                </motion.a>
+                <motion.a whileHover={{ scale: 1.15, boxShadow: "0 0 20px rgba(99,102,241,0.5)" }} transition={{ duration: 0.2 }} href={PERSONAL.socials.youtube} target="_blank" rel="noopener noreferrer" className="social-link glass" aria-label="YouTube" style={{ padding: "12px", borderRadius: "50%", display: "flex", color: "var(--accent-blue)" }}>
+                  <FiYoutube size={22} />
+                </motion.a>
+                <motion.a whileHover={{ scale: 1.15, boxShadow: "0 0 20px rgba(99,102,241,0.5)" }} transition={{ duration: 0.2 }} href={PERSONAL.socials.twitter} target="_blank" rel="noopener noreferrer" className="social-link glass" aria-label="Twitter" style={{ padding: "12px", borderRadius: "50%", display: "flex", color: "var(--accent-blue)" }}>
+                  <FiTwitter size={22} />
+                </motion.a>
+                <motion.a whileHover={{ scale: 1.15, boxShadow: "0 0 20px rgba(99,102,241,0.5)" }} transition={{ duration: 0.2 }} href={PERSONAL.socials.github} target="_blank" rel="noopener noreferrer" className="social-link glass" aria-label="GitHub" style={{ padding: "12px", borderRadius: "50%", display: "flex", color: "var(--accent-blue)" }}>
+                  <FiGithub size={22} />
+                </motion.a>
+              </div>
             </div>
           </motion.div>
         </div>
